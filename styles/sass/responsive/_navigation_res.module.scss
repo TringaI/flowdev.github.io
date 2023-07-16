@@ -9,7 +9,7 @@
         padding: 0%;
     }
     .nav_links_list_container_bg_black{
-        background-color: black;
+        background-color: rgb(15, 12, 23);
     }
     .nav_links_list_container_bg_transparent{
         background-color: transparent;
@@ -36,15 +36,20 @@
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        background-color: black;
+        background-color: rgb(15, 13, 18);
         padding-left: 5%;
         height: 100%;
         padding: 1%;
     }
     .nav_static_bg{
-        background-color: black;
+        background-color: rgb(15, 13, 18);
     }
     .nav_container{
         padding: 0%;
+    }
+    .links{
+        padding-bottom: 10%;
+        padding-top: 5%;
+        font-size: 20px;
     }
 }

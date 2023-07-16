@@ -41,7 +41,7 @@ export default function Navigation() {
       >
         <div
           className={`${style.wd_full} flex ${style.center}  `}
-          style={{ backgroundColor: "black" }}
+          style={{ backgroundColor: "rgb(15, 13, 18)" }}
         >
           <div className={style.nav_brand_container}>
             <Link href="#header">

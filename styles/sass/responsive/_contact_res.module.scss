@@ -6,11 +6,17 @@
     .send{
         font-size: 4vw;
     }
+    .contact_input{
+        font-size: 2.5vw;
+    }
 }
 
 
 @media only screen and (max-width: 736px) {
     .contact_input::placeholder{
+        font-size: 3vw;
+    }
+    .contact_input{
         font-size: 3vw;
     }
     .send{
