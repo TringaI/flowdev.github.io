@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind *;
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import './sass/vars/colors.module.scss';
+
+body{
+    background-color: $background-color;
+    font-family: 'Poiret One';
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+
+// scroll bar
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $background-color;
+    border: 2px $primary-color solid ;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+

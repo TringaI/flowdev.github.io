@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import './sass/vars/colors.module.scss';
+
+/* global vars */
+.flex{
+    display: flex;
+}
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+.flex_column_res{
+    display: flex;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+// end positioning in flex 
+.end_column_ver{
+    align-items: flex-end;
+}
+.end_column_hor{
+    justify-content: flex-end;
+}
+.end_row_ver{
+    justify-content: flex-end;
+}
+.end_row_hor{
+    align-items: flex-end;
+}
+
+
+
+// start positioning in flex
+.start_column_ver{
+    align-items: flex-start;
+}
+.start_column_hor{
+    justify-content: flex-start
+}
+.start_row_ver{
+    justify-content: flex-start;
+}
+.start_row_hor{
+    align-items: flex-start;
+}
+
+
+//headings
+    //primary headings
+    .primary_headings{
+        color: white;
+        font-size: 5vw;
+        width: fit-content;
+        text-align: left;
+    }
+    .secondary_headings{
+        color: $primary-color;
+        font-size: 3vw;
+        width: fit-content;
+    }
+
+
+
+//primary containers
+.primary_container{
+    width: 80%;
+    margin: auto;
+}
+.auto{
+    width: auto;
+}
+
+//overflows
+.ow_hidden{
+    overflow: hidden;
+}
+.ow_x_hidden{
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+//positions
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+
+.m_auto{
+    margin: auto;
+}
+
+
+.body_index{
+    z-index: 4;
+}
+
+.h_full{
+    height: 100%
+}
+
+.before_scroll{
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+.after_scroll{
+    opacity: 1;
+    transition: 1s ease-in-out;
+    
+}
+
+@import './sass/main/header.module.scss';
+@import './sass/main/services.module.scss';
+@import './sass/main/contact.module.scss';
+@import './sass/main/slider.module.scss';
+@import './sass/main/navigation.module.scss';
+@import './sass/main/portfolio.module.scss';
+@import './sass/main/programs.module.scss';
+@import './sass/main/fonts.module.scss';
+@import './sass/responsive/index_res.module';

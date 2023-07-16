@@ -1,0 +1,35 @@
+.venus{
+    left: -20%;
+}
+.contact_input{
+    background-color: transparent;
+    border: 0px solid transparent;
+    height: 50px;
+    color: white;
+    font-size: 1.5vw;
+    background-color: $background-color;
+}
+.contact_input::placeholder{
+    font-size: 1/5vw;
+    color: rgba(255, 255, 255, 0.411);
+}
+.contact_input_container{
+    height: 51px;
+    margin-top: 30px;
+    width: 100%;
+    background-image: linear-gradient(to right,  rgb(28, 48, 70), rgba(10, 19, 29, 0.282));
+}
+.message{
+    height: 150px;
+}
+.message_container{
+    height: 151px;
+}
+.send{
+    color: white;
+    margin-top: 40px;
+    font-size: 2vw; 
+}
+
+
+@import '../responsive/contact_res.module.scss';

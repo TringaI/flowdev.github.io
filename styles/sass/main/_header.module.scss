@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+@import './sass/vars/colors.module.scss';
+
+/* header styles */
+
+.header_container{
+    padding-top: 15%;
+    height: fit-content;
+    padding-bottom: 15%;
+}
+
+.header_heading{
+    font-family: 'Prosto one';
+    font-size: 10vw;
+    background: -webkit-linear-gradient(left, $primary-color,#b8b7fe00 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    line-height: 120px;
+    animation-name: header_headings_animations;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes header_headings_animations {
+    from{
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.header_secondary_heading{
+    color: #ffffff;
+    font-size: 5vw;
+    font-style: italic;
+    animation-name: header_headings_animations;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    margin: 0;
+}
+
+
+
+.path_image{
+    opacity: 0.05;
+    position: absolute;
+    margin-left: -30%;
+}
+@import '../responsive/header_res.module.scss';

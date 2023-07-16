@@ -1,0 +1,63 @@
+
+@import './sass/vars/colors.module.scss';
+
+.nav_container{
+    position: fixed;
+    padding-left: 0%;
+    transition: 0.5s ease-in-out;
+    z-index: 99;
+    width: 100%;
+    background-color: black;
+    padding: 1%;
+}
+
+// logo container
+.nav_brand_container{
+    width: 5%;
+}
+
+// all links container
+.nav_links_list_container{
+    width: 90%;
+    transition: 0.5s ease-in-out;
+}
+.links{
+    color: white;
+    font-size: 18px;
+}
+
+// link-p container 
+.links_container{
+    padding-left: 2%;
+}
+.links:hover{
+    color: pink;
+}
+
+// hamburger menu 
+.hamburger_menu_container{
+    display: none;
+    z-index: 90;
+}
+.hamburger_lines{
+    height: 1px;
+    background-color: white;
+    border: 0px solid transparent;
+    transition: 0.3s ;
+}
+.hamburger_long_line{
+    width: 50px;
+}
+.hamburger_short_line{
+    width: 30px;
+    margin-top: 4px;
+}
+.hamburger_long_line_res{
+    transform: rotate(40deg);
+    width: 30px
+}
+.hamburger_short_line_res{
+    transform: rotate(-40deg);
+    width: 30px
+}
+@import '../responsive/navigation_res.module.scss';

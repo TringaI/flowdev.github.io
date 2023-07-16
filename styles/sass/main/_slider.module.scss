@@ -1,0 +1,32 @@
+@import './sass/vars/colors.module.scss';
+
+@keyframes scroll {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  @keyframes scroll_right {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .animate {
+    animation: scroll 46s linear infinite;
+  }
+  .animate_right{
+    animation: scroll_right 46s linear infinite;
+  }
+
+  .slider_images_container{
+    width: 300px;
+  }
+
+  @import "../responsive/slider_res.module.scss";

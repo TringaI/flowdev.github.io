@@ -1,0 +1,10 @@
+.slide_show_image {
+    border-radius: 20px;
+    transition: opacity 1s ease-in-out;
+    opacity: 0.7;
+}
+.slide_show_image.fade-in {
+    opacity: 1;
+}
+
+@import '../responsive/portfolio_res.module.scss';

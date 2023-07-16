@@ -1,0 +1,77 @@
+@import "../vars/colors.module.scss";
+
+.services_desktop {
+  display: flex;
+}
+
+.services_mobile {
+  display: none;
+}
+
+.services_container {
+  width: 80vw;
+  height: 100vh;
+
+  margin: auto;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.services_cards_logos {
+  object-fit: contain;
+}
+
+.services_header_container {
+  padding-left: 5%;
+  z-index: 1;
+}
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  // box-shadow: 0 0 5px 3px $primary-color;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 2%;
+  border-radius: 10px;
+
+//   background-color: #5f66ea;
+
+  transition: background-color 0.2s ease-in;
+}
+.card_container:hover {
+//   background-color: #3740e5;
+}
+.card_container:active {
+  transform: scale(0.99);
+}
+
+.card_header {
+  color: whitesmoke;
+  font-size: 1.8rem;
+  margin-left: 2%;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.729);
+}
+.description .title {
+  font-size: calc(20px + 0.2vw);
+}
+.description .subtitle {
+  font-size: calc(16px + 0.2vw);
+}
+.description .features_list {
+  font-size: calc(14px + 0.2vw);
+  list-style-type: disc;
+  margin-left: 5%;
+
+  li {
+    margin-bottom: 2%;
+  }
+}
+
+@import "../responsive/services_res.module.scss";

@@ -1,0 +1,15 @@
+
+@media only screen and (max-width: 640px) {
+    .flex_column_res{
+        flex-direction: column;
+    }
+    .primary_headings{
+        font-size: 10vw;
+    }
+    .secondary_headings{
+        font-size: 5vw;
+    }
+    .none{
+        display: none;
+    }
+}

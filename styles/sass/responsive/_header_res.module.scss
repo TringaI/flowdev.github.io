@@ -1,0 +1,15 @@
+@media only screen and (max-width: 738px)  {
+    .header_heading{
+        font-size: 18vw;
+        background: -webkit-linear-gradient(left, $primary-color,#b8b7fe00 150%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: fit-content;
+    }
+    .header_secondary_heading{
+        font-size: 5.6vw;
+    }
+    .header_container{
+        padding-top: 25%;
+    }
+}
