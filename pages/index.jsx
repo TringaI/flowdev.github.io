@@ -13,6 +13,7 @@ import Contact from './Components/Contact/Index'
 export default function Home() {
   return (
     <main>
+      <link rel='favicon' sizes='any' href='/images/logos/flowdev_logo.png'></link>
         <Navigation/>
         <Header/>
         <Services/>
