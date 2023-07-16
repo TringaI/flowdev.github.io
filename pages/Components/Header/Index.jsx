@@ -45,7 +45,7 @@ export default function Header() {
 
                     </div>
                     <div className={`col-span-2 justify-center ${style.flex_column} ${style.h_full}`} >
-                        <Image src="/images/icons/paths.png" alt="paths" height={1500} width={1300}  className={style.path_image} />
+                        <Image src={"/images/icons/paths.png"} alt="paths" height={1500} width={1300}  className={style.path_image} />
 
                     </div>
                 </div>
