@@ -49,7 +49,7 @@ export default function Navigation() {
                 width="50"
                 height="50"
                 alt="logo"
-                src="/images/logos/flowdev_logo.png"
+                src="/images/logos/flowdev_logo.ico"
               />
             </Link>
           </div>
