@@ -1,7 +1,7 @@
 export const serviceData = [
     {
       name: "Website Development",
-      nameMobile: "Web Development!",
+      nameMobile: "Web Development",
       imageSrc: "/images/icons/website.png",
       description: {
         title: "Website Development",
@@ -21,7 +21,7 @@ export const serviceData = [
     },
     {
       name: "SEO Optimization",
-      nameMobile: "SEO!",
+      nameMobile: "SEO",
       imageSrc: "/images/icons/seo.png",
       description: {
         title: "SEO Optimization",
@@ -41,7 +41,7 @@ export const serviceData = [
     },
     {
       name: "UI/UX & Graphic Design",
-      nameMobile: "UI & UX!",
+      nameMobile: "UI & UX",
       imageSrc: "/images/icons/ui design.png",
       description: {
         title: "UI/UX & Graphic Design",
