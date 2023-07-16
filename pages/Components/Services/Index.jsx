@@ -48,7 +48,7 @@ export default function Services() {
     <div id="our services" className={`${scrollTop ? style.after_scroll : style.before_scroll}`}>
       <main  className={`${style.services_mobile} ${style.services_container} ${scrollTop ? style.after_scroll : style.before_scroll}`}>
         <h1 className={style.primary_headings}>OUR SERVICES</h1>
-
+        <br />
         <div className="grid grid-cols-1 gap-4">
           {serviceData.map((service) => (
             <div
