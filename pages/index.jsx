@@ -7,7 +7,7 @@ import Services from './Components/Services/Index'
 import Portfolio from './Components/Portfolio/Index'
 import Programs from './Components/Programs/Index'
 import Contact from './Components/Contact/Index'
-
+import Footer from './Components/Footer/Index'
 
 
 export default function Home() {
@@ -27,7 +27,8 @@ export default function Home() {
         <br /><br /><br />
         <br /><br /><br />  
         <Contact/>
-        <br/>
+        <br/><br /><br /> <br /> <br />
+        <Footer/>
     </main>
   )
 }

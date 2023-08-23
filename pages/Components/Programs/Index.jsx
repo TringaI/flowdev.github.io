@@ -23,14 +23,22 @@ export default function Programs() {
   const [scrollTop, setScrollTop] = useState(false);
   const [activeImage, setActiveImage] = useState()
 
+
+
   const handleResize = () => {
     if (window.innerWidth < 1000) {
-      setScrollTop(window.scrollY >= 1100);
-    } else {
-    setScrollTop(window.scrollY >= 2100);
-
+      if(window.scrollY >= 1100){
+        setScrollTop(true);
+        console.log(scrollTop)
+      }     
+    }else{
+      if(window.scrollY >= 1800){
+        setScrollTop(true);
+        console.log(scrollTop)
+      } 
     }
   };
+
 
   useEffect(() => {
     handleResize(); // Initial setup

@@ -18,16 +18,21 @@ export default function Services() {
 
   const [scrollTop, setScrollTop] = useState();
 
- 
+
+
+  
 
   const handleResize = () => {
     if (window.innerWidth < 1200) {
-      setScrollTop(window.scrollY >= 10);
-
-      console.log('first')
-    } else {
-    setScrollTop(window.scrollY >= 500);
-
+      if(window.scrollY >= 10){
+        setScrollTop(true);
+        console.log(scrollTop)
+      }     
+    }else{
+      if(window.scrollY >= 500){
+        setScrollTop(true);
+        console.log(scrollTop)
+      } 
     }
   };
 
@@ -39,17 +44,17 @@ export default function Services() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleResize);
+      window.removeEventListener("scroll", handleResize);
 
     };
   }, []);
-  
+
   return (
     <div id="our services" className={`${scrollTop ? style.after_scroll : style.before_scroll}`}>
-      <main  className={`${style.services_mobile} ${style.services_container} ${scrollTop ? style.after_scroll : style.before_scroll}`}>
-        <h1 className={style.primary_headings}>OUR SERVICES</h1>
-        <br />
-        <div className="grid grid-cols-1 gap-4">
+      <main className={`${style.services_mobile} ${style.services_container} ${scrollTop ? style.after_scroll : style.before_scroll}`}>
+        <h1 className={`${style.primary_headings} mb-20`}>OUR SERVICES</h1>
+
+        <div className={`grid grid-cols-1 gap-4 `} >
           {serviceData.map((service) => (
             <div
               key={service.nameMobile}
@@ -85,10 +90,10 @@ export default function Services() {
         </div>
       </main>
 
-      <main className={`${style.services_desktop} ${style.services_container}`}>
+      <main className={`${style.services_desktop} ${style.services_container} `}>
         <h1 className={style.primary_headings}>OUR SERVICES</h1>
 
-        <div className="grid grid-cols-2 grid-rows-1">
+        <div className="grid grid-cols-2 grid-rows-1 mt-[30px]">
           <div className="grid grid-cols-1 grid-rows-4 ">
             {serviceData.map((service) => (
               <div

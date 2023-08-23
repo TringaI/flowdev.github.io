@@ -3,7 +3,9 @@
 .services_desktop {
   display: flex;
 }
-
+.services_content_container{
+  padding-top: 20px;
+}
 .services_mobile {
   display: none;
   width: fit-content;
@@ -11,9 +13,7 @@
 
 .services_container {
   width: 80vw;
-
   margin: auto;
-
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -28,7 +28,8 @@
 }
 .card_container {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  padding-left: 4%;
   align-items: center;
   white-space: nowrap;
   // box-shadow: 0 0 5px 3px $primary-color;

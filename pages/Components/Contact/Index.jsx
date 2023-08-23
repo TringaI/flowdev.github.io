@@ -28,13 +28,22 @@ export default function Contact() {
 
   const [scrollTop, setScrollTop] = useState(false);
 
+
+
   const handleResize = () => {
     if (window.innerWidth < 1000) {
-      setScrollTop(window.scrollY >= 1900);
-    } else {
-      setScrollTop(window.scrollY >= 2300);
+      if(window.scrollY >= 1900){
+        setScrollTop(true);
+        console.log(scrollTop)
+      }     
+    }else{
+      if(window.scrollY >= 2200){
+        setScrollTop(true);
+        console.log(scrollTop)
+      } 
     }
   };
+
 
   useEffect(() => {
     handleResize(); // Initial setup
@@ -43,7 +52,7 @@ export default function Contact() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.addEventListener("scroll", handleResize);
+      window.removeEventListener("scroll", handleResize);
     };
   }, []);
   return (
