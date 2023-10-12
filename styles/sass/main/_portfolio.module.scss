@@ -1,10 +1,86 @@
-.slide_show_image {
-    border-radius: 20px;
-    transition: opacity 1s ease-in-out;
-    opacity: 0.7;
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import './sass/vars/colors.module.scss';
+
+
+.portfolio_main_container{
+    background-color: rgb(14, 13, 13);
+    padding: 40px 20px;
+    border-radius: 10px;
 }
-.slide_show_image.fade-in {
-    opacity: 1;
+.portfolio_key_headings {
+    font-size: 30px;
+    color: white;
 }
 
+.profile_subheadings {
+    font-size: 30px;
+    font-weight: 700
+}
+
+.portfolio_list {
+    list-style: none;
+}
+
+.portfolio_list li {
+    height: fit-content;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px
+}
+
+.portfolio_dec{
+    width: 2px;
+    background-color: $primary-color;
+    opacity: 0.5;
+    margin-left: 5px;
+}
+.portfolio_p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px
+}
+.portfolio_p::before{
+    content: "•"; color:white;
+    font-size: 25px;
+    margin-right: 5px
+}
+.portfolio_link{
+    font-size: 35px;
+    text-decoration: underline;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #d791a8;
+    margin-left: 20px
+}
+.yllka{
+    color : #9b7c68;
+}
+
+
+.protfolio_link{
+    color: white;
+    font-size: 25px;
+    // border: 1px solid $primary-color;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 5px 30px;
+}
+
+.card_panel{
+    background-image: linear-gradient(to right , rgb(20, 22, 39), rgba(0, 0, 0, 0.766));
+    // box-shadow: rgba(65, 109, 129, 0.255) 0px 10px 30px, rgba(63, 94, 103, 0.104) 0px 10px 12px;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px 40px 50px 40px;
+    // padding: 50px;
+    display: flex!important;
+    background-size: cover;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    align-items: center
+}
 @import '../responsive/portfolio_res.module.scss';

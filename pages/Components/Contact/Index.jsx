@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const placeholders = ["NAME...", "EMAIL...", "PHNOE NUMBER"];
+  const placeholders = ["Name...", "Email...", "Phone number"];
   const transformString = (str) =>
     str
       .toLowerCase()
@@ -26,72 +26,95 @@ export default function Contact() {
     e.target.reset();
   };
 
-  const [scrollTop, setScrollTop] = useState(false);
+  const indexRef = useRef(null);
+  const [isComponentVisible, setIsComponentVisible] = useState(false);
 
+  const [oneTime, setIsOneTime] = useState(false);
 
-
-  const handleResize = () => {
-    if (window.innerWidth < 1000) {
-      if(window.scrollY >= 1900){
-        setScrollTop(true);
-        console.log(scrollTop)
-      }     
-    }else{
-      if(window.scrollY >= 2200){
-        setScrollTop(true);
-        console.log(scrollTop)
-      } 
-    }
+  // Intersection Observer callback function
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsComponentVisible((prevState) => {
+          // Set isComponentVisible to true if it's not true already
+          if (!prevState) {
+            setIsOneTime(true); // Set oneTime to true
+            return true;
+          }
+          return prevState;
+        });
+      } else {
+        setIsComponentVisible(false);
+      }
+    });
   };
 
-
   useEffect(() => {
-    handleResize(); // Initial setup
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleResize);
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (indexRef.current) {
+      observer.observe(indexRef.current);
+    }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleResize);
+      if (indexRef.current) {
+        observer.unobserve(indexRef.current);
+      }
     };
   }, []);
+
   return (
     <main
-      className={scrollTop ? style.after_scroll : style.before_scroll}
+      className={`mt-40  md:mt-60 `}
       id="contact us"
+      ref={indexRef}
     >
-      <div className={`flex w-full ${style.center}`}>
-        <div className={`${style.flex_coulmn}  ${style.center}`}>
-          <h1 className={style.primary_headings}>CONTACT US</h1>
-          <h2 className={style.secondary_headings}>
-            get your company online <b>now</b>{" "}
-          </h2>
-          <br />
+      <div className={`w-full flex flex-col justify-center items-center transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? 'opacity-100':'opacity-0' } ${style.lines} ${style.services_main_containers} `} ref={indexRef}>
+        <div className="w-[80%] md:w-[45%]">
+          <div className={`flex flex-col justify-center items-center w-full }`}>
+            <div className="flex justify-center items-center relative w-full">
+              <h1 className={`${style.primary_headings} absolute bg-black p-[10px] left-0`}>get in touch</h1>
+              <hr className="bg-white opacity-20 h-[1px] w-[100%]" />
+            </div>
+            <div className="flex justify-end w-full">
+              <h2 className={style.secondary_headings}>
+                get your company online <b>now</b>{" "}
+              </h2>
+            </div>
+            <br />
 
-          <form ref={form} onSubmit={sendEmail}>
-            {placeholders.map((key) => (
-              <div key={key} className={`${style.contact_input_container}`}>
+            <form ref={form} onSubmit={sendEmail} className="w-full flex flex-col justify-center items-center">
+              {placeholders.map((key) => (
+                <div key={key} className={`${style.contact_input_container}`}>
+                  <input
+                    className={`w-full ${style.contact_input}`}
+                    placeholder={key}
+                    name={transformString(key)}
+                  />
+                </div>
+              ))}
+              <div
+                className={`${style.contact_input_container} ${style.message_container}`}
+              >
                 <input
-                  className={`w-full ${style.contact_input}`}
-                  placeholder={key}
-                  name={transformString(key)}
+                  className={`w-full ${style.contact_input} ${style.message}`}
+                  placeholder="Message..."
+                  name="message"
                 />
               </div>
-            ))}
-            <div
-              className={`${style.contact_input_container} ${style.message_container}`}
-            >
-              <input
-                className={`w-full ${style.contact_input} ${style.message}`}
-                placeholder="MESSAGE..."
-                name="message"
-              />
-            </div>
 
-            <input className={style.send} type="submit" value="SEND" />
-          </form>
+              <input className={style.send} type="submit" value="SEND" />
+            </form>
+          </div>
         </div>
       </div>
+
     </main>
   );
 }

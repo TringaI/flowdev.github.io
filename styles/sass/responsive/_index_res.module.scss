@@ -1,13 +1,14 @@
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
     .flex_column_res{
         flex-direction: column;
     }
     .primary_headings{
-        font-size: 10vw;
+        font-size: 20px;
     }
     .secondary_headings{
-        font-size: 5vw;
+        font-size: 20px;
+        margin-top: 30px;
     }
     .none{
         display: none;

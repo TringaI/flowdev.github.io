@@ -1,48 +1,60 @@
+import React, { useRef, useEffect, useState } from "react";
+import Flicking from "@egjs/react-flicking";
+import "@egjs/react-flicking/dist/flicking.css";
+import "@egjs/react-flicking/dist/flicking-inline.css";
+import { AutoPlay } from "@egjs/flicking-plugins";
 import style from '../../../../styles/index.module.scss'
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
 
-export default function Slider(props) {
+function importAllImages(r) {
+    return r.keys().map((filename) => ({
+        filename: filename.replace(/^.*[\\/]/, ''), // Remove any directory path
+        image: r(filename).default,
+    }));
+}
 
-    const images = [
-        'fk2.png',
-        'logo.png',
-        'toca.png',
-        'kosCare_mainLogo.png',
-        'codin_club_logoo.png'
-    ]
+let images = importAllImages(
+    require.context("../../../../public/images/portfolio", false, /\.(png|jpe?g|svg)$/)
+);
 
+export default function Slider() {
+    const [isClient, setIsClient] = useState(false);
 
+    const plugins = [new AutoPlay({ duration: 3000, direction: "NEXT", stopOnHover: false })];
 
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
-    
     return (
-        <div  className=" flex items-center  h-[150px]  justify-center" >
-        {/* 1. */}
-        <div  className="w-[200%]    relative">
-          {/* 2. */}
-          <div style={{height:'100%', }} className={`w-[200%] flex items-center  justify-around absolute left-0 ${style.animate}`}>
-            {/* 3 */}
-            {images.map((i) => {
-              return (
-                <div key={i} className={`flex justify-center items-center w-[50rem] h-full `} >
-                 <div style={{ width:'85%', }} className={`flex justify-center items-center ${style.slider_images_container}`}>
-                         <Image className={style.slider_images} width={90} height={90} src={`/images/portfolio/${i}`} alt='' />
-                    </div>
-                </div>
-              );
-            })}
-            {images.map((i) => {
-              return (
-                <div key={i} className={`flex justify-center items-center w-[50rem] h-full `} >
-                    <div style={{ width:'85%',}} className={`flex justify-center items-center ${style.slider_images_container}`}>
-                         <Image className={style.slider_images} width={90} height={90} src={`/images/portfolio/${i}`} alt='' />
-                    </div>
-                </div>
-              );
-            })}
-          </div>
+            <div className="mt-40">
+            {isClient && images ? (
+                <Flicking
+                    className='up_animation slider w-full mt-10 '
+                    plugins={plugins}
+                    align="prev"
+                    circular={true}
+                    onMoveEnd={e => {
+                        console.log(e);
+                    }}
+                >
+                    {images.map(({ filename, image }, index) => (
+                        <div className={`${style.panel} pl-20 pr-20 `} key={index}>
+                            <div className={style.image_container}>
+                                <Image width={60} height={60} src={`/images/portfolio/${filename}`} className="" alt="Panel 1" />
+
+                            </div>
+                            <p className={style.slider_logo_info}>{filename
+                                .replace(/^.*[\\/]/, '') // Remove directory path
+                                .replace(/\.[^.]+$/, '') // Remove file extension
+                                .replace(/^\w/, (c) => c.toUpperCase()) // Uppercase the first character
+                            }</p>
+                        </div>
+                    )
+                    )}
+                </Flicking>
+            )
+                : (<p>Loading</p>)}
         </div>
-      </div>
     );
-  }
+}

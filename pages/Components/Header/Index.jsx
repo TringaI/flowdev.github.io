@@ -6,51 +6,42 @@ import { useState, useEffect, useLayoutEffect } from 'react';
 
 
 export default function Header() {
-    
-    const [text, setText] = useState('');
-  
-    useEffect(() => {
-      let headerText = 'flowdev';
-      let count = 0;
-      let index = 0;
-      let currentTxt = '';
-      let fullTxt = '';
-  
-      const typingEffect = () => {
-        fullTxt = headerText;
-        currentTxt = fullTxt.slice(0, ++index);
-        setText(currentTxt);
-        setTimeout(typingEffect, 300);
-        if (currentTxt.length === fullTxt.length) {
-          index = 6;
-        }
-      };
-  
-      typingEffect();
-    }, []);
 
-    return (
-        <main id='header'>
-            <div className={`${style.header_container} ${style.relative} ${style.ow_hidden} w-full`}>
-                <div className={`grid grid-cols-12 w-full ${style.h_full} ${style.primary_container}`}>
-                    <div className='col-span-10'>
-                        <div className={`justify-center ${style.flex_column} ${style.h_full}`}>
-                            <h1 className={style.header_heading}>
-                                {text}
-                            </h1>
-                            <h2 className={style.header_secondary_heading}>
-                                unleashing digital brilliance
-                            </h2>
-                        </div>
+  const [text, setText] = useState('');
 
-                    </div>
-                    <div className={`col-span-2 justify-center ${style.flex_column} ${style.h_full}`} >
-                        <Image src={"/images/icons/paths.png"} alt="paths" height={1500} width={1300}  className={style.path_image} />
+  useEffect(() => {
+    let headerText = 'flowdev';
+    let count = 0;
+    let index = 0;
+    let currentTxt = '';
+    let fullTxt = '';
 
-                    </div>
-                </div>
-            </div>
+    const typingEffect = () => {
+      fullTxt = headerText;
+      currentTxt = fullTxt.slice(0, ++index);
+      setText(currentTxt);
+      setTimeout(typingEffect, 300);
+      if (currentTxt.length === fullTxt.length) {
+        index = 6;
+      }
+    };
 
-        </main>
-    )
+    typingEffect();
+  }, []);
+
+  return (
+    <main id='header' className={`${style.header_container} pt-40 pb-10 md:pt-[9rem] md:pb-20`}>
+
+      <div className="flex flex-col ">
+        <div className="flex w-full justify-center items-center">
+          <div className='flex flex-col justify-end items-end'>
+            <h1 className={`${style.header_main_heading}`}>FLOWDEV</h1>
+            <h1 className={`${style.header_secondary_heading}`}>AGENCY</h1>
+          </div>
+          <img src="/images/logos/flowdev_logo.ico" className={` lg:w-[400px] ml-10 md:ml-20  ${style.header_logo}`} alt="" />
+        </div>
+      </div>
+      <img src="/images/icons/wave.gif" className={`w-[100%] md:w-[90%] ml-[5%] absolute top-[8rem] md:top-[6rem] ${style.wave_gif}`} alt="" />
+    </main>
+  )
 }

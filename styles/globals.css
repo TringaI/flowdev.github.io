@@ -3,10 +3,10 @@
 @tailwind utilities;
 @tailwind *;
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import './sass/vars/colors.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 body{
-    background-color: $background-color;
+    background-color: black;
     font-family: 'Poiret One';
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -14,7 +14,6 @@ body{
   }
 
 
-// scroll bar
 ::-webkit-scrollbar {
     width: 10px;
   }
@@ -26,8 +25,8 @@ body{
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: $background-color;
-    border: 2px $primary-color solid ;
+    background: black;
+     border: 2px #8caee5 solid ;
     border-radius: 10px;
   }
   

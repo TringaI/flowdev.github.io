@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @import './sass/vars/colors.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 /* global vars */
 .flex{
@@ -55,14 +56,20 @@
 //headings
     //primary headings
     .primary_headings{
-        color: white;
-        font-size: 5vw;
+        color: rgb(223, 223, 224);
+        font-size: 25px;
         width: fit-content;
         text-align: left;
+        font-weight: bold;
+        background-color: black;
+        z-index: 4;
+        // font-family: 'Dela Gothic One';
     }
     .secondary_headings{
-        color: $primary-color;
-        font-size: 3vw;
+        color: white;
+        opacity: 0.6;
+        font-size: 25px;
+        margin-top: 20px;
         width: fit-content;
     }
 
@@ -118,7 +125,16 @@
     
 }
 
+
+// colors
+.primary_color_blue{
+    color: $primary-color
+}
+
+
+
 @import './sass/main/header.module.scss';
+// @import './globals.scss';
 @import './sass/main/services.module.scss';
 @import './sass/main/contact.module.scss';
 @import './sass/main/slider.module.scss';

@@ -3,3 +3,17 @@
     opacity: 0.7;
     font-size: 16px;
 }
+.footer_main_container{
+    border-radius: 100px 100px 0px 0px;
+    background: rgb(16, 18, 31);
+    padding: 40px 0px 10px 0px;
+    margin-top: 200px;
+}
+.footer_dec_text{
+    color: white;
+    font-size: 60px;
+    font-style: italic;
+}
+
+
+@import '../responsive/footer_res.module.scss';

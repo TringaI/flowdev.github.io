@@ -1,17 +1,55 @@
 
 
-@media only screen and (max-width: 738px)  {
-    .header_heading{
-        font-size: 18vw;
-        background: -webkit-linear-gradient(left, $primary-color,#b8b7fe00 150%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        width: fit-content;
+@media only screen and (max-width: 768px)  {
+    .header_main_heading{
+        font-size: 50px;
+        position: relative;
+        left: 10px;
+        padding-left: 20px;
     }
     .header_secondary_heading{
-        font-size: 5.6vw;
+        font-size: 35px;
     }
-    .header_container{
-        padding-top: 25%;
+    .header_logo{
+        width: 130px !important;
+        max-width: 130px!important;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 900px){
+    .header_main_heading{
+        font-size: 57px;
+     
+    }
+    .header_secondary_heading{
+        font-size: 40px;
+    }
+    .header_logo{
+        width: 200px !important;
+        max-width: 200px!important;
+    }
+}
+@media only screen and (min-width: 901px) and (max-width: 1050px){
+    .header_main_heading{
+        font-size: 70px;
+     
+    }
+    .header_secondary_heading{
+        font-size: 45px;
+    }
+    .header_logo{
+        width: 200px !important;
+        max-width: 200px!important;
+    }
+}
+@media only screen and (min-width: 1050px) and (max-width: 1300px){
+    .header_main_heading{
+        font-size: 80px;
+    }
+    .header_secondary_heading{
+        font-size: 50px;
+    }
+    .header_logo{
+        width: 250px !important;
+        max-width: 250px!important;
     }
 }

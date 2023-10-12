@@ -40,15 +40,16 @@ export default function Navigation() {
         `}
       >
         <div
-          className={`${style.wd_full} flex ${style.center}  `}
+          className={`${style.wd_full} flex justify-center items-center `}
           
         >
           <div className={style.nav_brand_container}>
             <Link href="#header">
               <Image
-                width="50"
-                height="50"
+                width="45"
+                height="45"
                 alt="logo"
+                className="ml-[10px]"
                 src="/images/logos/flowdev_logo.ico"
               />
             </Link>

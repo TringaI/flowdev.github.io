@@ -1,6 +1,6 @@
 import style from "../../../styles/index.module.scss";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef  } from "react";
 
 function importAllImages(r) {
   return r.keys().map((filename) => ({
@@ -20,38 +20,10 @@ images = images.slice(0, Math.round(images.length / 2));
 
 
 export default function Programs() {
-  const [scrollTop, setScrollTop] = useState(false);
   const [activeImage, setActiveImage] = useState()
 
 
 
-  const handleResize = () => {
-    if (window.innerWidth < 1000) {
-      if(window.scrollY >= 1100){
-        setScrollTop(true);
-        console.log(scrollTop)
-      }     
-    }else{
-      if(window.scrollY >= 1800){
-        setScrollTop(true);
-        console.log(scrollTop)
-      } 
-    }
-  };
-
-
-  useEffect(() => {
-    handleResize(); // Initial setup
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleResize);
-
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleResize);
-
-    };
-  }, []);
 
 
 
@@ -78,26 +50,69 @@ export default function Programs() {
     
   };
 
+  const indexRef = useRef(null);
+  const [isComponentVisible, setIsComponentVisible] = useState(false);
+
+  const [oneTime, setIsOneTime] = useState(false);
+
+  // Intersection Observer callback function
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsComponentVisible((prevState) => {
+          // Set isComponentVisible to true if it's not true already
+          if (!prevState) {
+            setIsOneTime(true); // Set oneTime to true
+            return true;
+          }
+          return prevState;
+        });
+      } else {
+        setIsComponentVisible(false);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (indexRef.current) {
+      observer.observe(indexRef.current);
+    }
+
+    return () => {
+      if (indexRef.current) {
+        observer.unobserve(indexRef.current);
+      }
+    };
+  }, []);
   return (
-    <main id='programs' className={`${style.programs_container} ${scrollTop ? style.after_scroll : style.before_scroll}`}>
+    <main id='programs' className={`${style.programs_container} mt-0`}>
       {/* Background Colors */}
       <div className={style.programs_dec}></div>
       <div className={style.programs_bottom_dec}></div>
 
       <div className={`${style.primary_container} ${style.body_index}`}>
-        <h1 className={style.primary_headings} >
-          SOURCES
-        </h1>
+      <div className="flex w-full justify-start items-center relative">
+        <hr className="bg-white opacity-20 h-[1px] w-[100%]"/>
+        <h1 className={`${style.primary_headings} ml-[5px] absolute right-0 bg-black p-[20px]`}>sources</h1>
+      </div>
         <h2 className={style.secondary_headings}>
-          programming languages & apps we work with
+          programming languages we <b>mainly</b> work with
         </h2>
 
-        <div className="w-full">
+        <div className={`w-full transition linear delay-0 duration-[1.5s] ${(isComponentVisible || oneTime) ? 'opacity-100' : 'opacity-0'}`} ref={indexRef}>
           <div className="grid grid-cols-12">
           {images.map(({ filename, image }, index) => (
                 <div className={`col-span-3  md:col-span-2 `} key={filename}>
                   <div
-                    className={`flex w-full ${style.programs_images_container} ${style.tooltip}`}
+                    className={`flex w-full flex-col ${style.programs_images_container} ${style.tooltip}`}
                   >
                     <Image
                       className={`${style.programs_images}`}
@@ -115,6 +130,11 @@ export default function Programs() {
                         
                       }}
                     />
+                    <p className="text-white mt-[10px]">{
+                        filename
+                          .replace(/^\.\/(.*?)\.png$/, "$1") // me e hek ./ edhe .png prej file name. se perndryshe aty e qet p.sh. ./python.png
+                          .replace(/^\w/, (c) => c.toUpperCase()) // kjo e bon qe shkronja e par mu kon uppercase
+                      }</p>
                     <span className={`${style.tooltiptext}`}>
                       {
                         filename

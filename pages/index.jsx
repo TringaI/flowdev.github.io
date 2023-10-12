@@ -8,27 +8,21 @@ import Portfolio from './Components/Portfolio/Index'
 import Programs from './Components/Programs/Index'
 import Contact from './Components/Contact/Index'
 import Footer from './Components/Footer/Index'
-
+import Slider from './Components/Portfolio/Components/Slider'
 
 export default function Home() {
   return (
     <main>
       <title>FlowDev Agency</title>
-        <Navigation/>
-        <Header/>
-        <Services/>
-        <br className={style.none} /><br className={style.none}/><br className={style.none} />
-        <br /><br /><br />
-        <Portfolio/>
-        <br /><br /><br />
-        <br /><br /><br />
-        <Programs/>
-        <br /><br /><br />
-        <br /><br /><br />
-        <br /><br /><br />  
-        <Contact/>
-        <br/><br /><br /> <br /> <br />
-        <Footer/>
+      <Navigation/>
+      <Header />
+      <Services />
+      <br className={style.none} /><br className={style.none} /><br className={style.none} />
+      <Portfolio />
+      <Programs />
+      <Contact />
+      <Slider/>
+      <Footer />
     </main>
   )
 }
