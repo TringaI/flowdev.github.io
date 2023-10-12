@@ -1,4 +1,42 @@
-@media only screen and (max-width: 550.0px) {
+@media only screen and (max-width: 395.0px) {
+    .services_content_container{
+      width: 95%;
+    }
+   #first_dec{
+    position: absolute;
+    left: 13%
+   }
+   #second_dec{
+    left: -20px;
+   }
+   #third_dec{
+    position: absolute;
+    left: 13%;
+   }
+   .services_cards_headings{
+    font-size: 25px;
+   }
+  }
+  @media only screen and (min-width: 396.0px) and (max-width : 450.9px) {
+    .services_content_container{
+      width: 95%;
+    }
+   #first_dec{
+    position: absolute;
+    left: 25%
+   }
+   #second_dec{
+    left: -20px;
+   }
+   #third_dec{
+    position: absolute;
+    left: 25%;
+   }
+   .services_cards_headings{
+    font-size: 25px;
+   }
+  }
+  @media only screen and (min-width: 451px) and (max-width : 550px) {
     .services_content_container{
       width: 95%;
     }
