@@ -47,7 +47,7 @@ function CardOne() {
       };
     }, []);
   return (
-    <div ref={indexRef}   className={`flex w-full mt-10 md:mt-20  transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? 'opacity-100':'opacity-0' }`}>
+    <div ref={indexRef}   className={`flex w-full mt-10 md:mt-20  transition linear delay-0 duration-[1s]  ${(isComponentVisible || oneTime) ? `${style.after_animation}`:`${style.before_animation}` }`}>
           <Cards left="240px" heading="Social Media Menagement" item1="Social Media Posts " item2="Client Handeling" item3="Content Writer"/>
         </div>
   )

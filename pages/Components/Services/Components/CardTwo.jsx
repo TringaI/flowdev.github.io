@@ -48,7 +48,7 @@ function CardOne() {
         };
     }, []);
     return (
-        <div ref={indexRef} className={`flex w-full mt-10 md:mt-20 relative transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? 'opacity-100':'opacity-0' }`}>
+        <div ref={indexRef} className={`flex w-full mt-10 md:mt-20 relative transition linear delay-0 duration-[1s]  ${(isComponentVisible || oneTime) ? `${style.after_animation}`:`${style.before_animation}` }`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="276" height="312" viewBox="0 0 276 312" fill="none" id={style.second_dec} className={`${(isComponentVisible || oneTime) ? style.drawLine : ''}`}>
                 <path d="M176 1.5H32C15.4315 1.5 2 14.9315 2 31.5V280C2 296.569 15.4315 310 32 310H275.5" stroke="url(#paint0_linear_357_5)" stroke-width="3" />
                 <defs>
@@ -58,7 +58,7 @@ function CardOne() {
                     </linearGradient>
                 </defs>
             </svg>
-            <Cards left="80px" heading="MARKETING" item1="Campaign Development" item2="Advertisements" item3="Product promovation" />
+            <Cards left="80px" heading="Marketing" item1="Campaign Development" item2="Advertisements" item3="Product promovation" />
 
         </div>
     )

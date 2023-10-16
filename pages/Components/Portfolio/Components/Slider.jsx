@@ -39,7 +39,7 @@ export default function Slider() {
                     }}
                 >
                     {images.map(({ filename, image }, index) => (
-                        <div className={`${style.panel} pl-20 pr-20 `} key={index}>
+                        <div className={`${style.panel} pl-10 pr-10  md:pl-20 md:pr-20 `} key={index}>
                             <div className={style.image_container}>
                                 <Image width={60} height={60} src={`/images/portfolio/${filename}`} className="" alt="Panel 1" />
 

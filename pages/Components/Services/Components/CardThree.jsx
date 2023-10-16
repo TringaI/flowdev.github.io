@@ -47,8 +47,8 @@ function CardOne() {
       };
     }, []);
   return (
-    <div ref={indexRef}  className={`flex w-full mt-10 md:mt-20 relative flex w-full mt-10 md:mt-20 relative transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? 'opacity-100':'opacity-0' }`}>
-          <Cards left="160px" heading="DESIGN" item1="Company branding" item2="Web Design" item3="Photo & Video Editing"/>
+    <div ref={indexRef}  className={`flex w-full mt-10 md:mt-20 relative flex w-full mt-10 md:mt-20 relative transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? `${style.after_animation}`:`${style.before_animation}` }`}>
+          <Cards left="160px" heading="Design " item1="Company branding" item2="Web Design" item3="Photo & Video Editing"/>
           <svg xmlns="http://www.w3.org/2000/svg" width="263" height="335" viewBox="0 0 263 335" fill="none" id={style.third_dec} className={`${(isComponentVisible || oneTime) ? style.drawLine:'' }`}>
             <path d="M0 2C91.8463 2 147.332 2 231.986 2C248.002 2 261 14.9837 261 31V304C261 320.016 248.016 333 232 333H95.8164" stroke="url(#paint0_linear_303_9)" strokeWidth="3" />
             <defs>

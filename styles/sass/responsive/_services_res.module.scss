@@ -1,4 +1,23 @@
-@media only screen and (max-width: 395.0px) {
+@media only screen and (max-width: 320px) {
+  .services_content_container{
+    width: 100%;
+  }
+ #first_dec{
+  position: absolute;
+  left: 6cqi
+ }
+ #second_dec{
+  left: -23px;
+ }
+ #third_dec{
+  position: absolute;
+  left: 6%;
+ }
+ .services_cards_headings{
+  font-size: 25px;
+ }
+}
+@media only screen and (min-width : 321px) and (max-width: 395.0px) {
     .services_content_container{
       width: 95%;
     }

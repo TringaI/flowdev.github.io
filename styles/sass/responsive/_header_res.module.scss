@@ -1,18 +1,30 @@
 
-
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 439px)  {
     .header_main_heading{
-        font-size: 30px;
+        font-size: 40px;
         position: relative;
-        left: 10px;
-        padding-left: 20px;
     }
     .header_secondary_heading{
         font-size: 30px;
+        left: 0px;
     }
     .header_logo{
-        width: 90px !important;
-        max-width: 90px!important;
+        width: 80px !important;
+        max-width: 80px!important;
+    }
+}
+@media only screen and (min-width: 440px) and (max-width: 768px)  {
+    .header_main_heading{
+        font-size: 55px;
+        position: relative;
+    }
+    .header_secondary_heading{
+        font-size: 40px;
+        left: 0px;
+    }
+    .header_logo{
+        width: 110px !important;
+        max-width: 110px!important;
     }
 }
 @media only screen and (min-width: 769px) and (max-width: 900px){
