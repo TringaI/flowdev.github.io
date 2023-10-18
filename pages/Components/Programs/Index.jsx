@@ -126,7 +126,7 @@ export default function Programs() {
 
                       }}
                     />
-                    <p className="text-white mt-[10px]">{
+                    <p className="text-white mt-[10px] text-[12px] md:text-[18px]">{
                       filename
                         .replace(/^\.\/(.*?)\.png$/, "$1") // me e hek ./ edhe .png prej file name. se perndryshe aty e qet p.sh. ./python.png
                         .replace(/^\w/, (c) => c.toUpperCase()) // kjo e bon qe shkronja e par mu kon uppercase
