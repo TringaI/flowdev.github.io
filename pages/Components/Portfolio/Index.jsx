@@ -3,7 +3,6 @@ import Slider from './Components/Slider'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
-import Slider3 from './Components/Slider3'
 
 export default function Portfolio() {
   const indexRef = useRef(null);

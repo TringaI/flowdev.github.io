@@ -41,7 +41,7 @@ export default function Header() {
           <img src="/images/logos/flowdev_logo.ico" className={` lg:w-[400px] left-0 md:ml-20 absolute top-[70px] md:relative  ${style.header_logo}`} alt="" />
         </div>
       </div>
-      <img src="/images/icons/wave.gif" className={`w-[100%] md:w-[90%] md:ml-[5%] absolute top-[13rem] md:top-[6.5rem] ${style.wave_gif}`} alt="" />
+      <img src="/images/icons/wave.gif" className={`w-[100%] md:w-[90%] md:ml-[5%] absolute top-[13rem] md:top-[7rem] ${style.wave_gif}`} alt="" />
     </main>
   )
 } 

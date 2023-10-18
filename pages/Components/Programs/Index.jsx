@@ -131,13 +131,7 @@ export default function Programs() {
                         .replace(/^\.\/(.*?)\.png$/, "$1") // me e hek ./ edhe .png prej file name. se perndryshe aty e qet p.sh. ./python.png
                         .replace(/^\w/, (c) => c.toUpperCase()) // kjo e bon qe shkronja e par mu kon uppercase
                     }</p>
-                    {/* <span className={`${style.tooltiptext}`}>
-                      {
-                        filename
-                          .replace(/^\.\/(.*?)\.png$/, "$1") // me e hek ./ edhe .png prej file name. se perndryshe aty e qet p.sh. ./python.png
-                          .replace(/^\w/, (c) => c.toUpperCase()) // kjo e bon qe shkronja e par mu kon uppercase
-                      }
-                    </span> */}
+                   
                   </div>
                 </div>
               )
