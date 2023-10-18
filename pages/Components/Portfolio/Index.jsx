@@ -49,7 +49,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-   <div className={`flex mt-60  flex-col w-full transition duration-0.5s delay-0 linear ${style.portfolio_main_container} `} >
+   <div className={`flex mt-40  flex-col w-full transition duration-0.5s delay-0 linear ${style.portfolio_main_container} `} >
      <div className={`flex flex-col justify-center items-center  `}>
       <main id='portfolio' className={`relative w-[80%]  mt-40`}>
 
