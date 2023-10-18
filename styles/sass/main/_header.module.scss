@@ -7,11 +7,13 @@
     width: 100%;
     height: fit-content;
     margin: 0px;
+    background-image: linear-gradient(rgb(20, 22, 39), black 35%  );
+
 }
 @keyframes heading{
     from{
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-200px);
     }to{
         opacity: 1;
         transform: translateX(-0px);
@@ -21,7 +23,7 @@
 @keyframes heading_two{
     from{
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(90px);
     }to{
         opacity: 1;
         transform: translateX(-0px);
@@ -31,7 +33,7 @@
 @keyframes image{
     from{
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(90px);
     }to{
         opacity: 1;
         transform: translateY(-0px);
@@ -41,7 +43,7 @@
 .header_logo{
     animation-name: image;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
 }
 .header_main_heading{
@@ -52,7 +54,8 @@
     line-height: 1;
     animation-name: heading;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
+
     animation-iteration-count: 1;
     padding: 0px
 }
@@ -65,9 +68,11 @@
     position: relative;
     margin-top: 10px;
     left: 50px;
+    font-weight: 600;
     animation-name: heading_two;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
+
     animation-iteration-count: 1;
 }
 .header_buttons{

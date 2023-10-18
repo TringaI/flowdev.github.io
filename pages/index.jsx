@@ -9,19 +9,19 @@ import Programs from './Components/Programs/Index'
 import Contact from './Components/Contact/Index'
 import Footer from './Components/Footer/Index'
 import Slider from './Components/Portfolio/Components/Slider'
-
+import Grainy from "./Components/Grainy";
+import Slider3 from './Components/Portfolio/Components/Slider3'
 export default function Home() {
   return (
     <main>
       <title>FlowDev Agency</title>
-      <Navigation/>
+      {/* <Navigation/> */}
+      <Grainy/>
       <Header />
-      <Services />
-      <br className={style.none} /><br className={style.none} /><br className={style.none} />
       <Portfolio />
+      <Services />
       <Programs />
       <Contact />
-      <Slider/>
       <Footer />
     </main>
   )

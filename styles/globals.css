@@ -4,13 +4,15 @@
 @tailwind *;
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 body{
     background-color: black;
-    font-family: 'Poiret One';
+    font-family: 'Montserrat';
     overflow-x: hidden;
     scroll-behavior: smooth;
     position: relative;
+    
   }
 
 

@@ -53,21 +53,14 @@ export default function Slider3() {
     };
   }, []);
   return (
-    <div className="w-full" ref={indexRef}>
-      <Flicking circular={true} plugins={_plugins} className={`p-10  transition linear delay-0 duration-[1.5s] ${(isComponentVisible || oneTime) ? 'opacity-100' : 'opacity-0'}`} >
+    <div className="w-full z-40 mt-40" ref={indexRef}>
+      <Flicking circular={true} plugins={_plugins} className={`p-10 z-40 transition linear delay-0 duration-[1.5s] ${(isComponentVisible || oneTime) ? 'opacity-100' : 'opacity-0'}`} >
 
         {slider3_data.map((item, index) => (
           <div key={index} className={style.card_panel}
-
           >
-            {/* <div className="flex justify-center items-center"> */}
-            {/* <h1 className={style.portfolio_key_headings}>{item.name} </h1> */}
-            {/* <Image className="ml-[10px]" src={`/images/portfolio/${item.logo}`} width={70} height={90} alt="" /> */}
-
-            {/* </div> */}
             <br />
             <Image src={`/images/work/${item.project}`} width={500} height={400} alt="" className="mt-10 transition duration-150 delay-0" />
-            {/* <a href="" className={style.protfolio_link}>view more</a> */}
           </div>
         ))}
 

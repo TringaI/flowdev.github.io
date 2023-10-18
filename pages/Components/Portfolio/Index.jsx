@@ -1,26 +1,78 @@
 import style from '../../../styles/index.module.scss'
 import Slider from './Components/Slider'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
 import Slider3 from './Components/Slider3'
 
 export default function Portfolio() {
+  const indexRef = useRef(null);
+  const [isComponentVisible, setIsComponentVisible] = useState(false);
+
+  const [oneTime, setIsOneTime] = useState(false);
+
+  // Intersection Observer callback function
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsComponentVisible((prevState) => {
+          // Set isComponentVisible to true if it's not true already
+          if (!prevState) {
+            setIsOneTime(true); // Set oneTime to true
+            return true;
+          }
+          return prevState;
+        });
+      } else {
+        setIsComponentVisible(false);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (indexRef.current) {
+      observer.observe(indexRef.current);
+    }
+
+    return () => {
+      if (indexRef.current) {
+        observer.unobserve(indexRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <main id='portfolio' className={`relative w-[80%] ml-[10%] mt-40`}>
-      <div className="flex justify-center items-center relative">
-        <h1 className={`${style.primary_headings} absolute bg-black p-[10px] left-0`}>flowdev portfolio</h1>
-        <hr className="bg-white opacity-20 h-[1px] w-[100%]" />
-      </div>
-      <div className="flex w-full justify-end">
-        <h1 className={`${style.secondary_headings} `}>some of <b><i>flowdev</i></b> projects</h1>
+   <div className={`flex mt-60  flex-col w-full transition duration-0.5s delay-0 linear ${style.portfolio_main_container} `} >
+     <div className={`flex flex-col justify-center items-center  `}>
+      <main id='portfolio' className={`relative w-[80%]  mt-40`}>
 
-      </div>
-      <br />
+        <h1 ref={indexRef} className={`${style.portfolio_heading} transition duration-[0.5s] delay-0 linear ${(isComponentVisible || oneTime) ? `${style.after_scroll}`:`${style.before_scroll}` }`}>
+              WE CREATE UNIQUE AND FULLY RESPONSIVE UI/UX AND SOFTWARE DEVELOPMENT
+            </h1>
+        <div className={`flex relative`}>
 
-      <Slider3 />
+          <div className={`w-[50%] ${style.portfolio_images_container} flex flex-col justify-center items-center`}>
+            <Image src='/images/work/letiArtMobile.png' className={`relative left-[-100px] opacity-40 `} width={400} height={350} alt='' />
+            <Image src='/images/work/miketMobileP.png' className={``} width={400} height={350} alt='' />
+            <Image src='/images/work/tieduMobile.png' className={`relative left-[-100px] opacity-40 `} width={400} height={350} alt='' />
 
-    </main>
+          </div>
+     
+        </div>
+
+
+      </main>
+    </div>
+    <Slider/>
+   </div>
   )
 }
 

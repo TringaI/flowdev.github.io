@@ -55,20 +55,25 @@
 
 //headings
     //primary headings
+    .primary_big_headings{
+        color: white;
+        font-size: 70px;
+        font-family: 'Dela Gothic One';
+    }
     .primary_headings{
         color: rgb(223, 223, 224);
         font-size: 25px;
         width: fit-content;
+        font-family: 'Poiret One';
         text-align: left;
         font-weight: bold;
-        background-color: black;
         z-index: 4;
-        // font-family: 'Dela Gothic One';
     }
     .secondary_headings{
         color: white;
         opacity: 0.6;
         font-size: 25px;
+        font-family: 'Poiret One';
         margin-top: 20px;
         width: fit-content;
     }

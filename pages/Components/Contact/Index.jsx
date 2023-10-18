@@ -71,27 +71,21 @@ export default function Contact() {
 
   return (
     <main
-      className={`mt-40  md:mt-60 `}
+      className={`mt-40  md:mt-60 ${style.contact_main_container}`}
       id="contact us"
       ref={indexRef}
     >
       <div className={`w-full flex flex-col justify-center items-center transition linear delay-0 duration-[1.5s]  ${(isComponentVisible || oneTime) ? 'opacity-100':'opacity-0' } ${style.lines} ${style.services_main_containers} `} ref={indexRef}>
         <div className="w-[80%] md:w-[45%]">
           <div className={`flex flex-col justify-center items-center w-full }`}>
-            <div className="flex justify-center items-center relative w-full">
-              <h1 className={`${style.primary_headings} absolute bg-black p-[10px] left-0`}>get in touch</h1>
-              <hr className="bg-white opacity-20 h-[1px] w-[100%]" />
-            </div>
-            <div className="flex justify-end w-full">
-              <h2 className={style.secondary_headings}>
-                get your company online <b>now</b>{" "}
-              </h2>
-            </div>
+           
+        <h1 className={`${style.primary_big_headings} text-black`} id={style.contact_main_heading}>GET IN TOUCH</h1>
+
             <br />
 
-            <form ref={form} onSubmit={sendEmail} className="w-full flex flex-col justify-center items-center">
+            <form ref={form} onSubmit={sendEmail} id={style.contact_container} className="w-full flex flex-col justify-center items-center">
               {placeholders.map((key) => (
-                <div key={key} className={`${style.contact_input_container}`}>
+                <div key={key} className="w-full">
                   <input
                     className={`w-full ${style.contact_input}`}
                     placeholder={key}
@@ -100,7 +94,7 @@ export default function Contact() {
                 </div>
               ))}
               <div
-                className={`${style.contact_input_container} ${style.message_container}`}
+                className={` ${style.message_container} w-full`}
               >
                 <input
                   className={`w-full ${style.contact_input} ${style.message}`}

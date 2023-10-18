@@ -1,35 +1,57 @@
 @import "../vars/colors.module.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 
 .services_container{
-  background-image: url('../../../public/images/logos/flowdev_logo.ico');
   background-position: center;
   background-size: 800px;
-  background-color: rgba(0, 0, 0, 0.925);
   background-blend-mode: multiply;
   background-repeat: no-repeat;
 }
+.services_main_container{
+  background-image: linear-gradient(rgb(20, 22, 39), black 10%);
 
+}
 
 .services_content_container{
   border-radius: 20px;
-  background-image: linear-gradient(to right ,rgb(20, 22, 39), black 60%);
   width: 50%;
   z-index: 80;
   padding: 40px;
   padding-bottom: 80px;
   height: fit-content;
+  transition: 0.1s linear;
+}
+.beforeHover{
+  background-image: linear-gradient(to right ,rgb(20, 22, 39), black 60%);
+  padding: 40px;
+  padding-bottom: 80px;
+  width: 50%;
+}
+.afterHover{
+  background-image: linear-gradient(to right ,rgb(20, 22, 39), black 120%);
+  padding: 60px;
+  padding-bottom: 80px;
+  width: 51%;
+  
+}
+.services_content_container:hover{
+  background-color: black;
 }
 .services_cards_headings{
   color: white;
-  font-size: 35px;
+  font-size: 30px;
+  font-family: 'Dela Gothic One';
 }
 .services_cards_p{
   color: white;
   font-size: 20px;
+  font-weight: 200;
   margin: 0px;
   padding: 0px;
-  padding-left: 10px
+  padding-left: 10px;
+  font-family: 'Montserrat';
 }
 
 //decs
@@ -55,7 +77,7 @@
 .drawLine {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: draw 2.5s linear forwards;
+  animation: draw 1.5s linear forwards;
   opacity: 0;
 }
 
@@ -67,9 +89,9 @@
   }
 }
 .before_animation{
-  transform: translateX(-60px)
+  transform: translateY(60px)
 }
 .after_animation{
-  transform: translateX(0px)
+  transform: translateY(0px)
 }
 @import "../responsive/services_res.module.scss";

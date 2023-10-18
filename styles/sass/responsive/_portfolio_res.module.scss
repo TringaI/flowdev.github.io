@@ -1,5 +1,46 @@
-@media screen and (max-width: 768px){
+@media screen and (max-width: 450px){
+    
+    .portfolio_heading{
+        font-size: 20px;
+        width: 70%;
+        margin-left: 30%;
+        z-index: 99;
+        text-align: right;
+    }
+}
+@media screen and (min-width: 451px) and (max-width :679px){
     .card_panel{
         width: 300px;
+    }
+    .portfolio_heading{
+        font-size: 30px;
+        width: 70%;
+        margin-left: 30%;
+        z-index: 99;
+        text-align: right;
+    }
+}
+@media screen and (min-width: 680px) and (max-width :768px){
+    .card_panel{
+        width: 300px;
+    }
+    .portfolio_heading{
+        font-size: 28px;
+        width: 70%;
+        margin-left: 30%;
+        z-index: 99;
+        text-align: right;
+    }
+}
+@media screen and (min-width: 769px) and (max-width :1324px){
+    .card_panel{
+        width: 300px;
+    }
+    .portfolio_heading{
+        font-size: 40px;
+        width: 70%;
+        margin-left: 30%;
+        z-index: 99;
+        text-align: right;
     }
 }

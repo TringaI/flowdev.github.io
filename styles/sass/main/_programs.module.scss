@@ -6,9 +6,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
   }
   
- 
+//  .programs_main_container{
+//   background-image: linear-gradient( black,rgb(20, 22, 39),);
+
+//  }
   .programs_images {
     margin-top: 80px;
     opacity: 0.4;
@@ -46,6 +50,14 @@
     left: -10%;
     // transform: translateX(-25%);
     margin-bottom: 10px;
+  }
+
+  #programs_heading{
+    font-weight: bold;
+    background-image: linear-gradient(to right, rgb(230, 230, 230), $primary-color 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
   @import "../responsive/programs_res.module.scss";

@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
 .venus{
     left: -20%;
 }
 .contact_input{
     background-color: transparent;
-    border: 0px solid transparent;
+    border-bottom: 2px solid black;
     height: 50px;
-    color: white;
+    color: black;
     font-size: 18px;
-    background-color: $background-color;
+    margin-top: 40px;
 }
 .contact_input::placeholder{
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.411);
+    font-weight: 600;
+    color: black;
 }
 .contact_input_container{
     height: 51px;
@@ -26,10 +29,21 @@
     height: 151px;
 }
 .send{
-    color: white;
-    margin-top: 40px;
-    font-size: 2vw; 
+    color: black;
+    margin-top: 80px;
+    font-size: 30px; 
+    font-family: 'Dela Gothic One';
 }
 
+.contact_main_container{
+    background-color: rgb(228, 221, 221);
+    padding: 50px 0px;
+}
 
+#contact_main_heading{
+    background-image: linear-gradient(to right, black, #5c7295 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 @import '../responsive/contact_res.module.scss';

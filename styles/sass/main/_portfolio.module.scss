@@ -2,11 +2,7 @@
 @import './sass/vars/colors.module.scss';
 
 
-.portfolio_main_container{
-    background-color: rgb(14, 13, 13);
-    padding: 40px 20px;
-    border-radius: 10px;
-}
+
 .portfolio_key_headings {
     font-size: 30px;
     color: white;
@@ -83,4 +79,52 @@
     justify-content: center;
     align-items: center
 }
+
+
+
+.slider_clients_images{
+    filter: grayscale(100%);
+    // filter: brigh
+    transition: 0.5s ;
+}
+.slider_clients_images:hover{
+    filter: grayscale(0%);
+
+}
+
+
+
+
+
+.portfolio_heading{
+    font-family: 'Dela Gothic One';
+    color: white;
+    font-size: 50px;
+    margin: 0px;
+    position: -webkit-sticky; /* for browser compatibility */
+    position: sticky!important;
+    top: 120px!important;
+    width: 50%;
+    margin-left: 50%;
+    left: 0!important;
+}
+
+
+
+
+
+.portfolio_main_container{
+    background-image: linear-gradient(black, rgb(20, 22, 39) );
+    height: fit-content;
+    padding-bottom: 150px!important;
+}
+
+
+.sticky_images{
+    position: -webkit-sticky; /* for browser compatibility */
+    position: sticky;
+}
+
+
+
 @import '../responsive/portfolio_res.module.scss';

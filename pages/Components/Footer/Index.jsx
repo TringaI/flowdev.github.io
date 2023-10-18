@@ -3,8 +3,8 @@ import Image from "next/image";
 
 function Index() {
     return (
-        <div className={`w-ful ${style.footer_main_container} flex flex-col justify-center items-center mt-20`}>
-            <h1 className={style.footer_dec_text}>we unleash digital brilliance</h1>
+        <div className={`w-ful ${style.footer_main_container} relative flex flex-col justify-center items-center  z-0`}>
+            <h1 className={style.footer_dec_text}>WE UNLEASH DIGITAL BRILLIANCE</h1>
             <div className="w-full grid grid-cols-12 mt-20 mb-20    ">
                 <div className="col-span-12 md:col-span-6 flex flex-col ">
                     <div className="flex md:pl-20 md:justify-start justify-center items-center w-full">
