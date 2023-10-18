@@ -35,7 +35,7 @@ function Cards(props) {
     return (
         <div
             className={`${style.services_content_container} ${isMouseOver ? `${style.afterHover}` :`${style.beforeHover}`} relative z-40`}
-            style={{ left: `${windowWidth.innerWidth > 768 ? props.left : '0px' }`}}
+            style={{left: `${windowWidth > 768 ? props.left : '0px'}`}}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
